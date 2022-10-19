@@ -1,2 +1,2 @@
 #!/bin/bash
-print (f"C is fun") $PYCODE
+python3 $PYCODE
