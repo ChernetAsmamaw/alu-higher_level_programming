@@ -2,5 +2,5 @@
 for i in range(0, 100):
     if i == 99:
         print(i)
-    else: 
+    else:
         print("{:0>2d}".format(i), end=", ")
