@@ -10,4 +10,4 @@ def fizzbuzz():
     else:
         number =str(n)
 
-        print("{:s}".formula(number), end='')
+print("{:s}".format(number), end='')
