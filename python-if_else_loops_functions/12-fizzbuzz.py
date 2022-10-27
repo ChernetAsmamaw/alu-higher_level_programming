@@ -10,6 +10,5 @@ def fizzbuzz():
         elif n % 5 == 0:
             number = "Buzz"
         else:
-            number =str(n)
-
+            number = str(n)
 print("{:s}".format(number), end=' ')
