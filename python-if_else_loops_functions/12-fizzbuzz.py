@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 def fizzbuzz():
     for n in range(1, 100 + 1):
         if n % 3 == 0 and n % 5 == 0:
@@ -10,4 +12,4 @@ def fizzbuzz():
     else:
         number =str(n)
 
-print("{:s}".format(number), end='')
+print("{:s}".format(number), end=' ')
