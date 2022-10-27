@@ -3,10 +3,10 @@
 
 for num in range(1, 101):
     if num % 3 == 0 and num % 5 == 0:
-        print("FizzBuzz: " + str(num))
+        print("FizzBuzz")
     elif num % 3 == 0:
-        print("Fizz:" + str(num))
+        print("Fizz")
     elif num % 5 == 0:
-        print("Buzz:" + str(num))
+        print("Buzz")
     else:
         print(num)
