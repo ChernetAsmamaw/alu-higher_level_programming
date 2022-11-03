@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# A function that removes all c&C characters from a string 
+# A function that removes all c&C characters from a string
 
 
 def no_c(my_string):
@@ -9,6 +9,4 @@ def no_c(my_string):
             pass
         else:
             word += my_string[i]
-
-
     return word
