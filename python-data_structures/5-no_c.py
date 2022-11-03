@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-# A function that removes all c and C characters from a string and returns a new string
+# A function that removes all c&C characters from a string 
+
 
 def no_c(my_string):
-    if my_string:
-        new_string = list(my_string)
-        for i in new_string:
-            if i in "cC":
-                new_string.remove(i)
-        my_string = "".join(new_string)
-    return my_string
+    word = ""
+    for i in range(len(my_string)):
+        if my_string[i] == 'C' or my_string[i] == 'c':
+            pass
+        else:
+            word + = my_string[i]
+     return word
