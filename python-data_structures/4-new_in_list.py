@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# This function replaces an element from the list with a specific position without modifying the original list
+# This function replaces an element from the list with a specific position
+# Without modifying the original list
+
 
 def new_in_list(my_list, idx, element):
     new_list = my_list.copy()
