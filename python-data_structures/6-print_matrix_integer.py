@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Prints a matricx of intigers 
+# Prints a matricx of intigers
 
 def print_matrix_integer(matrix=[[]]):
     for i in matrix:
