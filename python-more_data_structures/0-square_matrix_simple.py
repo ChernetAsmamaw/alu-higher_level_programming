@@ -10,4 +10,3 @@ def square_matrix_simple(matrix=[]):
         k = [i*i for i in matrix[row]]
         nw_matrix.append(k)
     return nw_matrix
-
