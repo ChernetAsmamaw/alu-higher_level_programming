@@ -3,4 +3,4 @@
 
 
 def multiply_by_2(a_dictionary):
-    return ({x: a-dictionary[x]*2 for x in a_dictionary})
+    return ({i: a-dictionary[i] * 2 for i in a_dictionary})
