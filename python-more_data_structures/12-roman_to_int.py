@@ -10,7 +10,6 @@ def roman_to_int(roman_string):
         return 0
     pre, sum = 0, 0
 
-
     for i in roman_string:
         sum += numbers[i] if numbers[i] <= pre else numbers[i] - pre * 2
         pre = numbers[i]
