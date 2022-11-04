@@ -4,5 +4,5 @@
 
 
 def print_sorted_dictionary(a_dictionary):
-    for key, val in sorted(a_dictionary.item()):
-        print("{}: {}".format(ker, val))
+    for key in sorted(a_dictionary):
+        print("{}: {}".format(key, a_dictionary[key]))
