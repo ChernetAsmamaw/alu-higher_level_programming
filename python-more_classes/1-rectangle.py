@@ -1,7 +1,6 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 """create the class"""
-#!/usr/bin/python3
-'''create the class'''
+
 
 class Rectangle:
     """initialize"""
