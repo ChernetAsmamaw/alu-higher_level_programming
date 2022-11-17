@@ -2,8 +2,8 @@
 ''' A class MyList that inherits from list '''
 
 
-class Mylist(list):
-    ''' create a Mylist through inheritance '''
+class MyList(list):
+    """create mi class mylist with inheritance"""
     def print_sorted(self):
-        ''' Sorts the list an dprints it '''
+        """sorted list"""
         print(sorted(self))
