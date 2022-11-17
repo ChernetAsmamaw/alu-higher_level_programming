@@ -3,9 +3,7 @@
 
 
 class Mylist(list):
-    ''' Represent a Mylist'''
-
+    ''' create a Mylist through inheritance '''
     def print_sorted(self):
-
         ''' Sorts the list an dprints it '''
         print(sorted(self))
