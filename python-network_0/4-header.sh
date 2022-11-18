@@ -1,3 +1,3 @@
 #!/bin/bash
-# Send a get request with custom set HEADER variable
-curl -s "$1" -X GET -H "X-HolbertonSchool-User-Id: 98"
+# display methods
+curl -s -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" $1

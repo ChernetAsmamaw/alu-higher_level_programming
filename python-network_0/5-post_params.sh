@@ -1,3 +1,3 @@
 #!/bin/bash
-# takes a URL, sends a POST and displays body
-curl -s "$1" -X POST -d "email=c.asmamaw@alustudent.com&subject=I will always be here for PLD"
+# display methods
+curl -s -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" $1
