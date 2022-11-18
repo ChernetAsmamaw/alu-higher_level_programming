@@ -1,3 +1,3 @@
 #!/bin/bash
-# display methods
-curl -s -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" $1
+# Script that takes an URL and displays the body of the response
+curl -sG "$1" -H "X-School-User-Id: 98"
