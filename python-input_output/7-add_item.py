@@ -1,20 +1,15 @@
 #!/usr/bin/python3
-"""
-In this module a single function that adds
-arguments Python list, and saves it to a file
-"""
+"""adds all arguments to a Python list"""
 import sys
-import os
+import json
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-
 try:
-    object = load_from_json_file('add_item.json')
+    textsaver = load_from_json_file('add_item.json')
 except:
-    object = []
+    textsaver = []
 
-if len(sys.argv) > 1:
-    object.extend(sys.argv[1:])
-
-save_to_json_file(object, 'add_item.json')
+for i in range(1, len(sys.argv)):
+    textsaver.append(sys.argv[i])
+save_to_json_file(textsaver, "add_item.json")
