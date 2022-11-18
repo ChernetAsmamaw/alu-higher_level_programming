@@ -1,15 +1,19 @@
 #!/usr/bin/python3
-"""adds all arguments to a Python list"""
-import sys
-import json
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+"""Load, add, save"""
 
-try:
-    textsaver = load_from_json_file('add_item.json')
-except:
-    textsaver = []
+from sys import argv
 
-for i in range(1, len(sys.argv)):
-    textsaver.append(sys.argv[i])
-save_to_json_file(textsaver, "add_item.json")
+
+if __name__ == "__main__":
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    fuck_pep8 = __import__('6-load_from_json_file').load_from_json_file
+    load_from_json_file = fuck_pep8
+    filename = "add_item.json"
+
+    try:
+        list = load_from_json_file(filename)
+    except:
+        list = []
+
+    list.extend(argv[1:])
+    save_to_json_file(list, "add_item.json")
