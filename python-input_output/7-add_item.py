@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Load, add, save"""
+""""""
 
 from sys import argv
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     try:
         list = load_from_json_file(filename)
     except:
-        list = []
+        list = ["Holberton"]
 
     list.extend(argv[1:])
     save_to_json_file(list, "add_item.json")
