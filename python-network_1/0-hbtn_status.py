@@ -4,7 +4,7 @@ import urllib.request
 
 
 if __name__ == "__main__":
-    with urllib.request.urlopen('https://alu-intranet.hbtn.io/status') as request:
+    with urllib.request.urlopen('https://alu-intranet.hbtn.io/status')\ as request:
         information = request.read()
         print("Body response:")
         print("\t- type:", type(information))
