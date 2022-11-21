@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# fetch using urlib and a with statement
+''' fetch using urlib and a with statement '''
 
 
 import urllib.request
