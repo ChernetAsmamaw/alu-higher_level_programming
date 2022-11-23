@@ -7,11 +7,11 @@ import sys.argv
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    email = sys.argv[1]
-    value = {"email: " email}
+    email = sys.argv[2]
+    value = {'email': email}
     data = urllib.parse.urlencode(value)
-    data = data.encode("utf-8")
+    data = data.encode('ascii')
     request = urllib.request.Request(url, data)
     with urllib.request.urlopen(request) as response:
         answer = response.read()
-        print(str(answer).decode("utf-8")
+        print(str(answer)[2:-1])
