@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-''' Script to receive URL and email, sends a post request and display body. '''
+""" Script to receive URL and email, sends a post request and display body. """
 import urllib.request
 import urllib.parse
-import sys.argv
+import sys
 
 
 if __name__ == "__main__":
