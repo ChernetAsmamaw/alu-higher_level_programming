@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Scrip that takes URL, sends request and displays\ value X-Request-Id variable found in the header of the response"""
+""" Scrip that takes URL, sends request and disp value X-Request-Id """
 import urllib.request
 import sys
 
