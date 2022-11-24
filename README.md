@@ -1,1 +1,1 @@
-THis is my readme for python-input_output
+This is my readme for python higher level programming in the alu programming foundation course
