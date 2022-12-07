@@ -4,6 +4,7 @@ This is the "0-add_integer" module
 The module supplies one function, add_integer(a, b)
 '''
 
+
 def add_integer(a, b=98):
     ''' this function returns the addtion of two numbers'''
     if type(a) not in [int, float]:
