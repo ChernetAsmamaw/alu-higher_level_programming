@@ -5,8 +5,8 @@ The supplies one function, matrix_divided(matrix, div).
 """                                                                                             
                                                                                                                                                          
                                                                                                                                                         
-def matrix_divided(matrix, div):                                                                                                                         
-    '''this divides all elements in the matrix by div'''                                                                                               
+def matrix_divided(matrix, div):                                                                                                                      
+  """this divides all elements in the matrix by div"""                                                                                          
      if (matrix == [] or matrix == [[]] or
         type(matrix) is not list or
             not all(type(xy) is list for xy in matrix)):
