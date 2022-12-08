@@ -4,7 +4,7 @@
 
         ### a and b must be integers or floats
 
-        >>> add_integer("Holberton", 98)
+        >>> add_integer("ALU", 98)
 	Traceback (most recent call last):
 	TypeError: a must be an integer
 
@@ -12,7 +12,7 @@
 	Traceback (most recent call last):
 	TypeError: b must be an integer
 
-	>>> add_integer("Holberton", "School")
+	>>> add_integer("ALU", "School")
 	Traceback (most recent call last):
 	TypeError: a must be an integer
 
