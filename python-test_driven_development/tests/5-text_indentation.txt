@@ -1,72 +1,20 @@
->>> print_square = __import__('4-print_square').print_square
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
-
-#TypeError
-
-    ### size must be an integer
-
-    >>> print_square(True)
+Regular test
+    >>> text_indentation("Hello world")
+    Hello world
+    >>> text_indentation("Hello. How are you?")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    >>> text_indentation("Lists: list1, list2")
+    Lists:
+    <BLANKLINE>
+    list1, list2
+    >>> text_indentation(5)
     Traceback (most recent call last):
-    TypeError: size must be an integer
-
-    >>> print_square("2795")
+    TypeError: text must be a string
+    >>> text_indentation()
     Traceback (most recent call last):
-    TypeError: size must be an integer
-
-    >>> print_square(None)
-    Traceback (most recent call last):
-    TypeError: size must be an integer
-
-    >>> print_square()
-    Traceback (most recent call last):
-    TypeError: print_square() missing 1 required positional argument: 'size'
-
-    ## size can not be a float
-
-    >>> print_square(27.95)
-    Traceback (most recent call last):
-    TypeError: size must be an integer
-
-    >>> print_square(-27.95)
-    Traceback (most recent call last):
-    TypeError: size must be an integer
-
-
-
-#ValueError 
-
-    ### size must be positive
-
-    >>> print_square(-2795)
-    Traceback (most recent call last):
-    ValueError: size must be >= 0
-
-    >>> print_square(-98)
-    Traceback (most recent call last):
-    ValueError: size must be >= 0
-
-
-
-#General Case
-
-    >>> print_square(0)
-
-
-    >>> print_square(1)
-    #
-
-    >>> print_square(2)
-    ##
-    ##
-
-    >>> print_square(10)
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
