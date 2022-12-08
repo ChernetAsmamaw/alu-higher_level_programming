@@ -5,7 +5,7 @@ Contains the matrix_mul function
 
 
 def matrix_mul(m_a, m_b):
-    """Multiply two matrices(lists of lists of integers/floats)"""
+    """Multiply 2 matrices."""
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
     l1 = len(m_a)
@@ -49,7 +49,7 @@ def matrix_mul(m_a, m_b):
         for j in range(l3):
             n = 0
             for k in range(l2):
-                n += m_a[item][k] * m_b[k][j]
+                n += m_a[i][k] * m_b[k][j]
             l.append(n)
         matrix.append(l)
     return matrix
