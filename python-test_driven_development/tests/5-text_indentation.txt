@@ -1,51 +1,72 @@
->>> text_ind = __import__('5-text_indentation').text_indentation
+>>> print_square = __import__('4-print_square').print_square
 
 
 #TypeError
 
-    ### text must be a string
+    ### size must be an integer
 
-    >>> text_ind()
+    >>> print_square(True)
     Traceback (most recent call last):
-    TypeError:
+    TypeError: size must be an integer
 
-    >>> text_ind(None)
+    >>> print_square("2795")
     Traceback (most recent call last):
-    TypeError: text must be a string
+    TypeError: size must be an integer
 
-    >>> text_ind(True)
+    >>> print_square(None)
     Traceback (most recent call last):
-    TypeError: text must be a string
+    TypeError: size must be an integer
 
-    >>> text_ind('0')
+    >>> print_square()
     Traceback (most recent call last):
-    TypeError: text must be a string
+    TypeError: print_square() missing 1 required positional argument: 'size'
 
-    >>> text_ind(1024)
+    ## size can not be a float
+
+    >>> print_square(27.95)
     Traceback (most recent call last):
-    TypeError: text must be a string
+    TypeError: size must be an integer
+
+    >>> print_square(-27.95)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+
+#ValueError 
+
+    ### size must be positive
+
+    >>> print_square(-2795)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+    >>> print_square(-98)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
 
 
 
 #General Case
 
-    >>> text_ind(".")
-    <BLANKLINE>
+    >>> print_square(0)
 
-    >>> text_ind("?")
-    <BLANKLINE>
 
-    >>> text_ind(":")
-    <BLANKLINE>
+    >>> print_square(1)
+    #
 
-    >>> text_ind(":a:")
-    <BLANKLINE>
-    a
-    <BLANKLINE>
+    >>> print_square(2)
+    ##
+    ##
 
-    >>> text_ind(".ALU:School?")
-    <BLANKLINE>
-    ALU
-    <BLANKLINE>
-    School
-    <BLANKLINE>
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
