@@ -6,20 +6,21 @@ The 5-text_indentation module supplies one function, text_indentation(text).
 
 
 def text_indentation(text):
-    """prints a text with 2 new lines after each of these chars: '.' '?' ':'"""
-    if type(text) is not str:
+    """Print text with two new lines after each '.', '?' and ':'."""
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
-    flag = False
-    for char in text:
-        if not flag:
-            if char == ' ':
-                continue
-            else:
-                flag = True
-        if flag:
-            if char == '.' or char == '?' or char == ':':
-                print(char)
-                print()
-                flag = False
-            else:
-                print(char, end="")
+
+    xy = 0
+    while xy < len(text) and text[xy] == ' ':
+        xy += 1
+
+    while xy < len(text):
+        print(text[xy], end="")
+        if text[xy] == "\n" or text[xy] in ".?:":
+            if text[xy] in ".?:":
+                print("\n")
+            xy += 1
+            while xy < len(text) and text[xy] == ' ':
+                xy += 1
+            continue
+        xy += 1
