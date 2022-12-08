@@ -1,10 +1,10 @@
-#!/usr/bin/python3                                                                                                                                       
-"""                                                                                                                                                    
-This is the "2-matrix_divided" module.                                                                                                                   
-The supplies one function, matrix_divided(matrix, div).                                                                                                  
-"""                                                                                             
-                                                                                                                                                         
-                                                                                                                                                        
+#!/usr/bin/python3
+"""
+This is the "2-matrix_divided" module.
+The module supplies one function, matrix_divided(matrix, div).
+"""
+
+
 def matrix_divided(matrix, div):
     """divides all elements of a matrix"""
     if (matrix == [] or matrix == [[]] or
