@@ -1,55 +1,55 @@
 #!/usr/bin/python3
-"""
-Contains the matrix_mul function
-"""
+"""Matrix multiplication"""
 
 
 def matrix_mul(m_a, m_b):
-    """Multiply 2 matrices."""
+    """multiplies 2 matrices"""
+
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
-    l1 = len(m_a)
-    if l1 == 0:
-        raise ValueError("m_a can't be empty")
-    l2 = None
-    for item in m_a:
-        if type(item) is not list:
-            raise TypeError("m_a must be a list of lists")
-        if l2 is None:
-            l2 = len(item)
-            if l2 == 0:
-                raise ValueError("m_a can't be empty")
-        if l2 != len(item):
-            raise TypeError("each row of m_a must be of the same size")
-        for j in item:
-            if type(j) is not int and type(j) is not float:
-                raise TypeError("m_a should contain only integers or floats")
     if type(m_b) is not list:
         raise TypeError("m_b must be a list")
-    if len(m_b) == 0:
-        raise ValueError("m_b can't be empty")
-    l3 = None
-    for item in m_b:
-        if type(item) is not list:
+
+    for i in m_a:
+        if type(i) is not list:
+            raise TypeError("m_a must be a list of lists")
+    for i in m_b:
+        if type(i) is not list:
             raise TypeError("m_b must be a list of lists")
-        if l3 is None:
-            l3 = len(item)
-            if l3 == 0:
-                raise ValueError("m_b can't be empty")
-        if l3 != len(item):
-            raise TypeError("each row of m_b must be of the same size")
-        for j in item:
-            if type(j) is not int and type(j) is not float:
+
+    if (m_a == [] or m_a == [[]]):
+        raise ValueError("m_a can't be empty")
+    if (m_b == [] or m_b == [[]]):
+        raise ValueError("m_b can't be empty")
+
+    for i in m_a:
+        for element in i:
+            if type(element) not in [int, float]:
+                raise TypeError("m_a should contain only integers or floats")
+    for i in m_b:
+        for element in i:
+            if type(element) not in [int, float]:
                 raise TypeError("m_b should contain only integers or floats")
-    if l2 != len(m_b):
+
+    if any(len(i) != len(m_a[0]) for i in m_a):
+        raise TypeError("each row of m_a must be of the same size")
+    if any(len(i) != len(m_b[0]) for i in m_b):
+        raise TypeError("each row of m_b must be of the same size")
+
+    "check if number of rows in m_a is equal to the number of columns in m_b"
+    if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    matrix = []
-    for item in range(l1):
-        l = []
-        for j in range(l3):
-            n = 0
-            for k in range(l2):
-                n += m_a[i][k] * m_b[k][j]
-            l.append(n)
-        matrix.append(l)
-    return matrix
+
+    "create a new null matrix with size columns of m_a and rows of m_b"
+    m_c = []
+    for i in range(len(m_a)):
+        m_c.append([])
+        for j in range(len(m_b[0])):
+            m_c[i].append(0)
+
+    "overwrite the entries of m_c with the product of m_a by m_b"
+    for i in range(len(m_a)):
+        for j in range(len(m_b[0])):
+            for k in range(len(m_a[0])):
+                m_c[i][j] += m_a[i][k] * m_b[k][j]
+    return m_c
