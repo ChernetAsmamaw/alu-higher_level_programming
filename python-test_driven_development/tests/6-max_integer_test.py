@@ -25,7 +25,7 @@ class TestMaxInteger(unittest.TestCase):
         ordered = [1024, 512, 256, 128, 64]
         self.assertEqual(max_integer(ordered), 1024)
 
-    def test_random_integer list(self):
+    def test_random_integer_list(self):
         ordered = [98, -1024, 1, -21, 2795]
         self.assertEqual(max_integer(ordered), 2795)
 
