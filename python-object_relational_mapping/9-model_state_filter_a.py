@@ -1,23 +1,28 @@
 #!/usr/bin/python3
-"""
-Prints out all the State objects that contain the letter a from the database
-"""
+"""A script that lists all State objects that
+contain the letter a from the database"""
 
 
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
 
-if __name__ == '__main__':
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+                        sys.argv[1], sys.argv[2], sys.argv[3]),
+                        pool_pre_ping=True
+                    )
     Session = sessionmaker(bind=engine)
+
+    Base.metadata.create_all(engine)
+
     session = Session()
 
-    states = session.query(State).filter(State.name.like('%a%')).all()
+    states = session.query(State).filter(State.name.contains('a')).all()
 
     for state in states:
-        print(f"{sate.id}: {state.name}")
+        print(f'{state.id}: {state.name}')
+
+    session.close()
