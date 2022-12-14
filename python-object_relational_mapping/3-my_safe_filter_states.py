@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-"""displays all values in the states table of hbtn_0e_0_usa
-   where name matches matches an argument passed as a parameter
-   safe from MySQL injections"""
+"""
+Prints out all values in the states tables of a database
+where name matches the argument in a safe way
+"""
 
+
+import sys
 import MySQLdb
-from sys import argv
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=argv[1], passwd=argv[2], db=argv[3])
+if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
+                         db=sys.argv[3], port=3306)
+
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = %(name)s",
-                   {'name': argv[4]})
-    for data in cursor.fetchall():
-        print(data)
-    cursor.close()
-    db.close()
+    cursor.execute("SELECT * FROM states WHERE name = %s;", (sys.argv[4],))
+    states = cursor.fetchall()
+
+    for state in states:
+        print(state)

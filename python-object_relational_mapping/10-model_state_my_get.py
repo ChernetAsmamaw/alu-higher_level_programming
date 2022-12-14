@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Writes out the first State object from the database hbtn_0e_6_usa
+Writes out the State object with the name passed as argument from the db
 """
 
 
@@ -17,6 +17,5 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
-
-    print("Nothing" if not state else "{}: {}".format(state.id, state.name))
+    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    print("Not found" if not state else state.id)

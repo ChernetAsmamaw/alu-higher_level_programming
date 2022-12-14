@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Writes out the first State object from the database hbtn_0e_6_usa
+Prints out all the State objects that contain the letter a from the database
 """
 
 
@@ -17,6 +17,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    states = session.query(State).filter(State.name.like('%a%')).all()
 
-    print("Nothing" if not state else "{}: {}".format(state.id, state.name))
+    for state in states:
+        print(f"{sate.id}: {state.name}")

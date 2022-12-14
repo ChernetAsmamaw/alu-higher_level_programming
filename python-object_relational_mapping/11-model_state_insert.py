@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Writes out the first State object from the database hbtn_0e_6_usa
+Program adds the State object "Lousiana" to the database hbtn_0e_6_usa
 """
 
 
@@ -17,6 +17,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    newState = State(name='Louisiana')
+    session.add(newState)
+    session.commit()
 
-    print("Nothing" if not state else "{}: {}".format(state.id, state.name))
+    print(newState.id)
